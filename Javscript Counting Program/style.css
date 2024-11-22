@@ -1,0 +1,36 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-content{
+    width: 350px;
+    padding: 20px;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    background-color: blue;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+button{
+    padding: 10px 20px;
+    margin: 0px 10px;
+    background-color: rgb(0, 255, 0);
+    border: 3px solid black;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+}
+#stop{
+    background-color: red;
+}
+#reset{
+    background-color: aqua;
+}
+button:active{
+    transform: scale(0.9);
+    box-shadow: 0px 5px 0px black;
+}

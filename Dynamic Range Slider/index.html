@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Range Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <span id="rangeValue" aria-live="polite">0</span>
+        <input type="range" class="range" value="0" min="0" max="100" onchange="rangeSlide(this.value)"
+            onmousemove="rangeSlide(this.value)" />
+    </div>
+
+    <script>
+        function rangeSlide(value) {
+            document.getElementById("rangeValue").textContent = value;
+        }
+    </script>
+</body>
+
+</html>

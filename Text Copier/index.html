@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Copy Text</title>
+</head>
+
+<body>
+<div class="main">
+  <input type="text" id="textToCopy" value="Text to copy" placeholder="Enter text to copy">
+  <button onclick="copyText()">Copy Text</button>
+  <p id="massage"></p>
+</div>
+
+    <script>
+function copyText() {
+   var text = document.getElementById("textToCopy");
+   text.select();
+   document.execCommand("copy");
+   document.getElementById("massage").innerHTML = "Text copied to clipboard!"
+ 
+   setTimeout(function() {
+       document.getElementById("massage").textContent = "";
+   }, 2000);
+}
+    </script>
+</body>
+
+</html>
