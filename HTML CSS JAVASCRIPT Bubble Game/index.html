@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bubble Game</title>
+</head>
+<body id="bd">
+    <div class="header">
+        <h3>Score : -  <label id="Score"></label> </h3>
+        <h3>Loss : -   <label id="Loss"></label></h3>
+    </div>
+    <div class="main-box">
+        <div class="main-container" id="menu">
+            <section>
+                <label id="difficulty">Difficulty: </label> &nbsp;&nbsp;
+                <input type="radio" checked="true" name="diff" id="l1"><label for="l1">&nbsp;Easy</label>&nbsp;&nbsp;
+                <input type="radio" name="diff" id="l2"><label for="l2">&nbsp;Medium</label>&nbsp;&nbsp;
+                <input type="radio" name="diff" id="l3"><label for="l3">&nbsp;Hard</label>
+                <br>
+                <br>
+                <button id="btn" > Game Start </button> <br><br>
+                <button id="btn2" onclick="myfunexit()"> Game Exit </button>
+
+        </section>
+        </div>
+
+        <div class="main-container" id="game_over">
+                <h1> Game Over </h1> &nbsp;&nbsp;
+                <br>
+                <label>Total Bubbles : </label><label id="total_bubbles"></label><br><br>
+                <label>Your Score : </label><label id="score"></label><br><br>
+                <label>Total Loss : </label><label id="loss"></label><br><br>
+                <button id="btn1">OK</button>
+        </div>
+    </div>
+</div>
+<div class="footer">Copyright © Davil </div>
+    <audio id="dis-sound" autoplay>
+        <source type="audio/wav">
+    </audio>
+
+    
+    
+</body>
+<script src="script.js"></script>
+</html>
