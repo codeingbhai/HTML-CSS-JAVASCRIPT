@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse scroller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Scrollable Value</h2>
+        <div class="value-display">0</div>
+        <div class="instructions">Hover over the value and scroll up/down to change it</div>
+        <div class="controls">
+            <button id="reset">Reset</button>
+        </div>
+
+        <script>
+            const valueEl = document.querySelector('.value-display');
+            let value = 50;
+            const min = 0;
+            const max = 100;
+
+            function updateValue(newValue) {
+                value = Math.max(min, Math.min(max, newValue));
+                valueEl.textContent = value;
+            }
+            // Mouse wheel
+            valueEl.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                updateValue(value + (e.deltaY < 0 ? 1 : -1));
+            });
+
+            // Mouse drag
+            let dragging = false;
+            valueEl.addEventListener('mousedown', (e) => {
+                dragging = true;
+                valueEl.style.cursor = 'grabbing';
+            });
+            document.addEventListener('mousemove', (e) => {
+                if (dragging) {
+                    const diff = e.movementY;
+                    updateValue(value + Math.round(diff / 5));
+                }
+            });
+            document.addEventListener('mouseup', () => {
+                dragging = false;
+                valueEl.style.cursor = 'grab';
+            });
+            document.getElementById('reset').addEventListener('click', () => {
+                value = 50;
+                updateValue(value);
+            });
+            updateValue(value);
+            document.body.addEventListener('mousedown', (e) => e.preventDefault());
+        </script>
+</body>
+
+</html>
